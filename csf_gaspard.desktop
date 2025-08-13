@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=CSF Gaspard Stats
+Comment=Application statistique GASPARD pour la CSF
+Exec=/home/yoann.baudrin/CSF_GASPARD_Unite/dist/main
+Icon=/home/yoann.baudrin/CSF_GASPARD_Unite/icon.png
+Terminal=false
+Type=Application
+Categories=Office;Utility;

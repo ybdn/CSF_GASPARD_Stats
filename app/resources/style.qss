@@ -1,0 +1,130 @@
+QWidget {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; /* Police plus moderne */
+    font-size: 10pt;
+    color: #333; /* Couleur de texte principale */
+}
+
+QMainWindow {
+    background-color: #f0f0f0; /* Arrière-plan légèrement gris */
+}
+
+QTabWidget::pane { /* Contenu des onglets */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #ffffff; /* Fond blanc pour le contenu */
+    padding: 10px;
+}
+
+QTabBar::tab {
+    background: #e0e0e0; /* Fond des onglets inactifs */
+    border: 1px solid #ccc;
+    border-bottom: none; /* Éviter double bordure */
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 8px 15px;
+    margin-right: 2px;
+    color: #555;
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background: #ffffff; /* Fond blanc pour l'onglet actif/survolé */
+    color: #000;
+}
+
+QTabBar::tab:!selected {
+    margin-top: 2px; /* Décaler légèrement les onglets inactifs */
+}
+
+QPushButton {
+    background-color: #0078d7; /* Bleu standard */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    min-width: 80px; /* Largeur minimale */
+}
+
+QPushButton:hover {
+    background-color: #005a9e; /* Bleu plus foncé au survol */
+}
+
+QPushButton:pressed {
+    background-color: #003c6a; /* Bleu encore plus foncé si pressé */
+}
+
+QPushButton:disabled {
+    background-color: #cccccc;
+    color: #666666;
+}
+
+QLineEdit, QComboBox, QSpinBox {
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #ffffff;
+}
+
+QLineEdit:focus, QComboBox:focus, QSpinBox:focus {
+    border: 1px solid #0078d7; /* Bordure bleue au focus */
+}
+
+QTableView {
+    border: 1px solid #ccc;
+    gridline-color: #e0e0e0;
+    background-color: #ffffff;
+    alternate-background-color: #f9f9f9; /* Lignes alternées */
+}
+
+QTableView::item {
+    padding: 5px;
+}
+
+QHeaderView::section {
+    background-color: #e8e8e8;
+    padding: 4px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+}
+
+QLabel {
+    background-color: transparent; /* Assurer la transparence par défaut */
+}
+
+QMenuBar {
+    background-color: #e8e8e8; /* Fond de la barre de menu */
+    color: #333;
+}
+
+QMenuBar::item {
+    background: transparent;
+    padding: 4px 8px;
+}
+
+QMenuBar::item:selected { /* when selected using mouse or keyboard */
+    background: #cde;
+}
+
+QMenu {
+    background-color: #ffffff; /* Fond des menus */
+    border: 1px solid #ccc;
+}
+
+QMenu::item {
+    padding: 5px 20px;
+}
+
+QMenu::item:selected { /* when selected using mouse or keyboard */
+    background-color: #0078d7;
+    color: white;
+}
+
+QMenu::separator {
+    height: 1px;
+    background: #e0e0e0;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+QMessageBox {
+    background-color: #f0f0f0;
+} 

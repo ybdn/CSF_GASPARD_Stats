@@ -1,0 +1,760 @@
+﻿libelle_unite;type_materiel;code_unite_terminal_de_saisie
+;;
+CIC BDRIJ GGD01;Scanner;20061
+BP de Saint-Laurent-sur-Saône;Scanner;02549
+BP de Trévoux;Scanner;02585
+BP d'Ambérieu-en-Bugey;Bloc optique;02556
+BTA  de Valserhône;Bloc optique;26027
+BTA  de Miribel;Bloc optique;02590
+BTA d'Ornex;Bloc optique;02581
+BTA de Lagnieu;Bloc optique;02560
+CIC BDRIJ GGD02;Scanner;19432
+BP de Saint-Quentin;Scanner;00429
+BP de Chauny;Bloc optique;00406
+BTA  d'Hirson;Bloc optique;00452
+BP de Villers-Cotterêts;Bloc optique;00445
+BP de La-Capelle;Bloc optique;00450
+CIC BDRIJ GGD03;Scanner;20197
+BP de Gannat;Scanner;03083
+BP de Saint-Pourçain-sur-Sioule;Bloc optique;03060
+CIC BDRIJ GGD04;Scanner;20571
+BP de Château-Arnoux-Saint-Auban;Scanner;04394
+BP de Sisteron;Bloc optique;04399
+CIC BDRIJ GGD05;Scanner;20588
+BP d'Embrun;Scanner;04436
+BP de St Bonnet en Champsaur;Bloc optique;04417
+CIC BDRIJ GGD06;Scanner;20605
+BP de Menton;Scanner;04488
+BTA de Puget-Théniers;Scanner;04501
+BP de Mandelieu-la-Napoule;Bloc optique;04470
+BTA  de Villeneuve-Loubet;Bloc optique;33451
+BTA  de Vence;Bloc optique;04482
+BTA de Mougins;Bloc optique;09410
+BTA de Valbonne;Bloc optique;09844
+BP de Carros;Bloc optique;04483
+BTA de Mouans-Sartoux;Bloc optique;10198
+BP de Roquefort-les-Pins;Bloc optique;10436
+BP de La-Trinité;Bloc optique;04462
+CIC BDRIJ GGD07;Scanner;20078
+BP du Teil;Bloc optique;02615
+BTA de Tournon-sur-Rhône;Bloc optique;02637
+BTA de Bourg-Saint-Andéol;Bloc optique;02610
+BP d'Annonay;Bloc optique;02639
+CIC BDRIJ GGD08;Scanner;20367
+BP de Revin;Scanner;03638
+BP de Rethel;Bloc optique;03666
+BP de Vrigne-aux-Bois;Bloc optique;03654
+BTA de Nouzonville;Bloc optique;03632
+CIC BDRIJ GGD09;Scanner;19925
+BP de Pamiers;Scanner;02148
+BTA de Lavelanet;Bloc optique;02140
+CIC BDRIJ GGD10;Scanner;20384
+BP de Nogent-sur-Seine;Scanner;03713
+PMO de Buchères;Scanner;12999
+BP de Romilly-sur-Seine;Bloc optique;03716
+BP de Bar-sur-Aube;Bloc optique;03696
+CIC BDRIJ GGD11;Scanner;20673
+BP de Narbonne;Scanner;04708
+BP de Bram;Scanner;04693
+BTA  de Castelnaudary;Bloc optique;04691
+BP de Lézignan-Corbières;Bloc optique;04712
+BP de Limoux;Bloc optique;04697
+PMO de Lavalette;Bloc optique;58002
+CIC BDRIJ GGD12;Scanner;19942
+PMO de Millau;Scanner;18084
+BP de Villefranche-de-Rouergue;Bloc optique;02231
+CIC BDRIJ GGD13;Scanner;20554
+BTA de St Rémy de Provence;Scanner;04329
+PA de Salon de Provence;Scanner;07727
+BTA de Orgon;Scanner;04349
+BTA de Berre-l'étang;Scanner;04345
+BTA  de Gardanne;Bloc optique;04314
+BTA  de Châteaurenard;Bloc optique;04326
+BTA de Roquevaire;Bloc optique;04340
+BTA de Carry-le-Rouet;Bloc optique;05584
+BTA de Lançon-Provence;Bloc optique;10128
+CIC BDRIJ GGD14;Scanner;19568
+BP d'Isigny-sur-Mer;Scanner;00938
+BP de Pont-l'évèque;Scanner;00961
+BR de Caen;Bloc optique;09636
+BTA  d'Ouistreham;Bloc optique;00929
+BTA  de Vire-Normandie;Bloc optique;00971
+BTA de Bayeux;Bloc optique;00935
+BTA de Douvres-la-Délivrande;Bloc optique;00925
+BP d'Évrecy;Bloc optique;00926
+BP de Bretteville-sur-Laize;Bloc optique;00945
+BTA de Falaise;Bloc optique;00944
+CIC BDRIJ GGD15;Scanner;20214
+PMO de Saint-Flour;Scanner;18182
+BP d’Aurillac;Bloc optique;03096
+CIC BDRIJ GGD16;Scanner;19806
+BP de Jarnac;Scanner;01795
+BP de Confolens;Scanner;01799
+BP de Ruffec;Bloc optique;01808
+BP de Barbezieux-Saint-Hilaire;Bloc optique;01792
+CIC BDRIJ GGD17;Scanner;19823
+BTA St Martin de Ré;Scanner;01831
+BP de Marans;Scanner;01828
+BP de Saint-Pierre-d'Oléron;Bloc optique;01850
+BP de Surgères;Bloc optique;01858
+BP de Saint-Jean-d'Angély;Bloc optique;01874
+BTA de Saintes;Bloc optique;01863
+BTA de Nieul-sur-Mer;Bloc optique;27876
+BTA de La-Tremblade;Bloc optique;01851
+BP de Saint-Porchaire;Bloc optique;01870
+BTA de Marennes Hiers Brouage;Bloc optique;01845
+CIC BDRIJ GGD18;Scanner;20792
+BP de Sancerre;Scanner;05376
+BP de Saint-Martin-d'Auxigny;Scanner;05401
+BP de Saint-Amand-Montrond;Bloc optique;05380
+BP de Mehun-sur-Yèvre;Bloc optique;05398
+CIC BDRIJ GGD19;Scanner;19874
+BP d'Uzerche;Scanner;01991
+BP de Brive-la-Gaillarde;Bloc optique;01995
+BTA de Tulle;Bloc optique;01980
+CIC BDRIJ GGD21;Scanner;20418
+BP de Saulieu;Scanner;03826
+BTA de Nuits-Saint-Georges;Scanner;03807
+BP de Châtillon-sur-Seine;Bloc optique;03813
+BTA  de Quetigny;Bloc optique;06701
+PMO de Pouilly-en-Auxois;Bloc optique;28678
+BTA de Gevrey-Chambertin;Bloc optique;03793
+BP de Montbard;Bloc optique;03822
+CIC BDRIJ GGD22;Scanner;19517
+BTA de Perros-Guirec;Scanner;00786
+BTA de Matignon;Scanner;00762
+BTA de Dinan;Bloc optique;00756
+BTA de Guingamp;Bloc optique;00771
+BTA de Loudéac;Bloc optique;00744
+BTA de Lamballe-Armor;Bloc optique;00741
+BTA de Pléneuf-Val-André;Bloc optique;00747
+BTA de Paimpol;Bloc optique;00745
+PMO de Saint-Brieuc;Bloc optique;08008
+CIC BDRIJ GGD23;Scanner;19891
+BP de Aubusson;Scanner;02036
+BP de Sainte-Feyre;Scanner;30576
+BP de La-Souterraine;Bloc optique;02033
+CIC BDRIJ GGD24;Scanner;19721
+BP de Bergerac;Scanner;01496
+BP de Sarlat-la-Canéda;Bloc optique;01531
+BP de Montpon-Ménestérol;Bloc optique;01522
+CIC BDRIJ GGD25;Scanner;20486
+BP de Valdahon;Scanner;04053
+BP de Morteau;Scanner;04061
+BP d'École-Valentin;Bloc optique;15430
+BP d'Étupes;Bloc optique;04034
+BP de Saint-Vit;Bloc optique;04023
+BTA de Bavans;Bloc optique;04031
+CIC BDRIJ GGD26;Scanner;20095
+BP de Saint-Vallier;Scanner;02707
+BP de Saint-Paul-Trois-Châteaux;Scanner;02687
+BP de Loriol-sur-Drôme;Bloc optique;02667
+BTA de Chabeuil;Bloc optique;02664
+BTA de Chatuzange le Goubet;Bloc optique;02701
+CIC BDRIJ GGD27;Scanner;19483
+BP de Brionne;Scanner;00640
+BP de Saint-Georges-du-Vièvre;Scanner;00661
+BP de Bernay;Bloc optique;00637
+BP de Gisors;Bloc optique;00632
+BTA de Gaillon;Bloc optique;00648
+BP de Verneuil-d'Avre-et-d'Iton;Bloc optique;00625
+BTA des Andelys;Bloc optique;00628
+BP de Pont-Audemer;Bloc optique;00654
+BTA de Conches en Ouche;Bloc optique;00617
+CIC BDRIJ GGD28;Scanner;20809
+BP de La-Loupe;Scanner;05444
+BTA de Nogent-le-Roi;Scanner;05436
+BP de Maintenon;Bloc optique;05418
+BP de Châteaudun;Bloc optique;05423
+BP de Dreux;Bloc optique;05431
+BP de Thivars;Bloc optique;05413
+BP de Nogent-le-Rotrou;Bloc optique;05441
+CIC BDRIJ GGD29;Scanner;19534
+BGMAR Brest;Scanner;10658
+BP de Châteauneuf-du-Faou;Scanner;00829
+BP de Plouzané;Scanner;08333
+BP de Plourin-lès-Morlaix;Scanner;00838
+BP de Pont-l'Abbé;Bloc optique;00809
+BP de Saint-Pol-de-Léon;Bloc optique;00845
+BTA  de Landerneau;Bloc optique;00818
+BTA  de Quimperlé;Bloc optique;05574
+BP de Saint-Renan;Bloc optique;00823
+BP de Plabennec;Bloc optique;00821
+BP de Rosporden;Bloc optique;05579
+BP de Audierne;Bloc optique;00802
+CIC SAJ RGCOR;Scanner;20741
+BP de Peri;Scanner;04892
+BP de Propriano;Scanner;04909
+BTA de Porto-Vecchio;Bloc optique;04899
+CIC BDRIJ GGD2B;Scanner;20758
+BP de Ghisonaccia;Scanner;04943
+BP de Calvi;Scanner;04928
+BTA de Borgo;Bloc optique;04919
+CIC BDRIJ GGD30;Scanner;20690
+BP d'Uzès;Scanner;04760
+BP de Saint-Ambroix;Scanner;04757
+BP de Vauvert;Bloc optique;04737
+BTA  de Marguerittes;Bloc optique;04732
+BTA de St Gilles ;Bloc optique;04734
+CIC BDRIJ GGD31;Scanner;19908
+BP de Villefranche-de-Lauragais;Scanner;02118
+PMO de Villefranche-de-Lauragais;Scanner;09229
+PMO d'Estancarbon;Scanner;11508
+BP de Balma;Bloc optique;02068
+BP de Castelginest;Bloc optique;32376
+BP de Seysses;Bloc optique;14171
+BTA  de Muret;Bloc optique;02088
+PMO de Toulouse;Bloc optique;11139
+BP de Saint-Jory;Bloc optique;02080
+BP de l'Union;Bloc optique;02082
+BP de Fronton;Bloc optique;02074
+BP de Cugnaux;Bloc optique;09841
+BP de Grenade;Bloc optique;02075
+BP de Saint-Lys;Bloc optique;02099
+BTA de Portet-sur-Garonne;Bloc optique;02078
+BP de Carbonne;Bloc optique;02092
+BTA de Saint-Orens-de-Gameville;Bloc optique;08389
+BP de Castanet-Tolosan;Bloc optique;02071
+BP de Auterive;Bloc optique;02090
+CIC BDRIJ GGD32;Scanner;19959
+BP de Condom;Scanner;02258
+BP de l'Isle-Jourdain;Scanner;02249
+BP de Fleurance;Bloc optique;02262
+CIC BDRIJ GGD33;Scanner;19704
+BTA de Blaye;Scanner;01414
+BTA de Lacanau;Scanner;05570
+BTA  d'Ambarès-et-Lagrave;Bloc optique;01424
+BTA  de Langon-Toulenne;Bloc optique;01436
+BTA  de Lesparre-Médoc;Bloc optique;01452
+BTA  de Libourne;Bloc optique;01465
+BTA de Saint-André-de-Cubzac;Bloc optique;01433
+BTA de Blanquefort;Bloc optique;01402
+BTA de Saint-Médard-en-Jalles;Bloc optique;01409
+BTA de Gujan-Mestras;Bloc optique;05603
+BTA de Bourg;Bloc optique;01415
+BP de Saint-Savin;Bloc optique;01419
+BTA de Carbon Blanc;Bloc optique;01426
+CIC BDRIJ GGD34;Scanner;20656
+BTA de Palavas les Flots;Scanner;14888
+BP de Marseillan;Scanner;04662
+BP de Clermont-l'Hérault;Scanner;04655
+BTA de Balaruc-les-Bains;Scanner;04665
+BP de Bédarieux;Bloc optique;04637
+BTA  de Castelnau-le-Lez;Bloc optique;04623
+BTA  de Valras-Plage;Bloc optique;04649
+BTA  de Lunel;Bloc optique;04628
+BTA  de Pézenas;Bloc optique;04642
+BTA de Castries;Bloc optique;04624
+PA de Poussan;Bloc optique;08342
+BTA de Saint-Georges-d'Orques;Bloc optique;07192
+BTA de Saint-Jean-de-Védas;Bloc optique;17444
+BTA de Capestang;Bloc optique;04638
+BTA de Mèze;Bloc optique;04666
+BTA de Jacou Clapiers;Bloc optique;15884
+CIC BDRIJ GGD35;Scanner;19500
+BP Fougères;Scanner;00690
+BTA de Mordelles;Scanner;00683
+BP de Bain de Bretagne;Scanner;00699
+BP de Montfort-sur-Meu;Bloc optique;00682
+BP de Vitré;Bloc optique;00720
+BTA  de Pacé;Bloc optique;10048
+BP de Redon;Bloc optique;00697
+BTA de Bruz;Bloc optique;00678
+BTA de Vern-sur-Seiche;Bloc optique;10930
+BTA de St Aubin du Cormier;Bloc optique;00693
+CIC BDRIJ GGD36;Scanner;20826
+BP d'Argenton-sur-Creuse;Scanner;05456
+BP de Buzançais;Scanner;05457
+BP d'Issoudun;Bloc optique;05480
+CIC BDRIJ GGD37;Scanner;20843
+BP de Chambray-lès-Tours;Scanner;07456
+BP de Montlouis-sur-Loire;Scanner;07970
+BP Ste Maure de Touraine;Scanner;05516
+PMO de Chambray-lès-Tours;Scanner;17731
+BTA  d'Amboise;Bloc optique;05494
+BP  de Chinon;Bloc optique;05509
+BP de Loches;Bloc optique;05519
+CIC BDRIJ GGD38;Scanner;20112
+BTA de La-Verpillière;Scanner;02802
+BTA de La-Tour-du-Pin;Scanner;02775
+BP de Meylan;Scanner;09403
+BP de Saint Marcellin;Bloc optique;02754
+BTA  du Pont-de-Claix;Bloc optique;02726
+BTA  de Villefontaine;Bloc optique;10068
+BTA  de Roussillon;Bloc optique;02800
+BTA de Pont-de-Chéruy;Bloc optique;02799
+BTA d'Eybens;Bloc optique;02724
+BTA de Seyssinet-Pariset;Bloc optique;08514
+BTA de l'Isle-d'Abeau;Bloc optique;10523
+BP de Morestel;Bloc optique;02772
+BTA de Vizille;Bloc optique;02751
+BP de Renage;Bloc optique;26751
+BP de Beaurepaire;Bloc optique;02796
+BP de Saint-Clair-du-Rhône;Bloc optique;09855
+BTA de St Egrève;Bloc optique;02728
+CIC BDRIJ GGD39;Scanner;20503
+BP de Poligny;Scanner;04088
+BTA de Champagnole;Scanner;04082
+BP de Saint-Claude;Bloc optique;04103
+BP de Dole;Bloc optique;04093
+CIC BDRIJ GGD40;Scanner;19738
+BP de Tarnos;Scanner;01579
+BTA de Mimizan;Scanner;01589
+BP de Capbreton;Bloc optique;01567
+BP de Biscarrosse;Bloc optique;01583
+BTA de Dax;Bloc optique;01566
+BP de Soustons;Bloc optique;01578
+CIC BDRIJ GGD41;Scanner;20860
+BP de Lamotte-Beuvron;Scanner;05554
+BP de Veuzain-sur-Loire;Scanner;05548
+BP de Montrichard-Val-de-Cher;Bloc optique;05546
+BTA  de Romorantin-Lanthenay;Bloc optique;60052
+BTA de Mer;Bloc optique;05545
+PMO de Salbris;Bloc optique;29227
+CIC BDRIJ GGD42;Scanner;20129
+BTA d'Andrézieux-Bouthéon;Scanner;02828
+BP de Roanne;Scanner;02850
+BTA  de Montbrison;Bloc optique;02827
+CIC BDRIJ GGD43;Scanner;20231
+BP d'Yssingeaux;Scanner;03168
+BP de Bas-Monistrol;Scanner;03169
+BP de Brioude;Bloc optique;03156
+CIC BDRIJ GGD44;Scanner;19619
+BP de Pontchateau;Scanner;01171
+BP de Blain;Scanner;01141
+BP d'Ancenis-Saint-Géréon;Bloc optique;01132
+BP de Châteaubriant;Bloc optique;01140
+BP de Clisson;Bloc optique;01121
+BP de Guérande;Bloc optique;01168
+BTA de Carquefou;Bloc optique;01120
+BTA de Couëron;Bloc optique;01165
+BTA de La-Chapelle-sur-Erdre;Bloc optique;02784
+BTA de Sainte-Luce-sur-Loire;Bloc optique;01117
+BP de Pornic;Bloc optique;01155
+BP de Saint-Brevin-les-Pins;Bloc optique;01156
+BTA de Vertou;Bloc optique;01129
+BP du Loroux-Bottereau;Bloc optique;01133
+BP du Pellerin;Bloc optique;01154
+BTA de Montoir-de-Bretagne;Bloc optique;01170
+BTA de Bouguenais;Bloc optique;05600
+CIC BDRIJ GGD45;Scanner;20775
+BP de Briare;Scanner;05333
+BP de Château-Renard;Scanner;05343
+BTA  de Gien;Bloc optique;05331
+BTA  de Pithiviers;Bloc optique;05352
+PMO de Pannes;Bloc optique;12867
+BP de Meung-sur-Loire;Bloc optique;05325
+BTA de Sully-sur-Loire;Bloc optique;05337
+CIC BDRIJ GGD46;Scanner;19976
+BP de Puy-l'évèque;Scanner;02298
+BP de Gourdon;Scanner;02313
+BTA de Figeac;Bloc optique;02303
+CIC BDRIJ GGD47;Scanner;19755
+BP de Fumel;Scanner;01646
+BP de Laplume;Scanner;01610
+BP de Tonneins;Bloc optique;01630
+BTA de Marmande;Bloc optique;01619
+CIC BDRIJ GGD48;Scanner;20707
+BP de Marvejols;Scanner;04807
+CIC BDRIJ GGD49;Scanner;19636
+BTA de Sèvremoine;Scanner;01205
+BP de Verrières-en-Anjou;Scanner;01190
+BP de Doué-en-Anjou;Bloc optique;01216
+BP de Segré-en-Anjou-Bleu;Bloc optique;01227
+BTA  d'Angers;Bloc optique;01184
+BP de Longué-Jumelles;Bloc optique;01219
+CIC BDRIJ GGD50;Scanner;19585
+BGMAR de Cherbourg;Scanner;75455
+BP des Pieux;Scanner;01018
+BP de Valognes;Scanner;01023
+BTA d'Avranches;Bloc optique;01000
+BP de Bréhal;Bloc optique;01029
+CIC BDRIJ GGD51;Scanner;20350
+BP de Sézanne;Scanner;03589
+BP de Gueux;Scanner;03598
+BP de Vitry-le-François;Bloc optique;03606
+CIC BDRIJ GGD52;Scanner;20401
+BP de Joinville;Scanner;03758
+BTA  de Langres;Bloc optique;03738
+CIC BDRIJ GGD53;Scanner;19653
+BP d'Evron;Scanner;01245
+BP d'Ernée;Scanner;01265
+BP de Château-Gontier-sur-Mayenne;Bloc optique;01253
+BP de Mayenne;Bloc optique;01262
+CIC BDRIJ GGD54;Scanner;20265
+PMO de Val-de-Briey;Scanner;29325
+BP de Lexy;Scanner;28352
+BP de Blainville-sur-l'Eau;Bloc optique;03332
+BTA  de Frouard;Bloc optique;03294
+BTA de Neuves-Maisons;Bloc optique;03297
+CIC BDRIJ GGD55;Scanner;20282
+BP d'Etain;Scanner;03383
+BTA de Commercy;Scanner;03361
+BP de Void-Vacon;Bloc optique;03368
+CIC BDRIJ GGD56;Scanner;19551
+BRGMAR de Lorient;Scanner;04205
+BP de Carnac;Scanner;00876
+BP de Theix-Noyalo;Scanner;10049
+BP de Ploërmel;Bloc optique;00889
+BP de Pontivy;Bloc optique;00900
+BTA  d'Auray;Bloc optique;00873
+BP de Pont-Scorff;Bloc optique;00884
+BP de Port-Louis;Bloc optique;00885
+BP de Questembert;Bloc optique;00865
+BP de Baud;Bloc optique;00901
+CIC BDRIJ GGD57;Scanner;20248
+BP de Dieuze;Scanner;03225
+BTA  de Maizières-lès-Metz;Bloc optique;03206
+BTA  de Creutzwald;Bloc optique;03217
+BTA  de Fameck;Bloc optique;03267
+BTA de Behren-lès-Forbach;Bloc optique;03231
+CIC BDRIJ GGD58;Scanner;20435
+BP de La-Charité-sur-Loire;Scanner;03867
+BP de Cosne-Cours-sur-Loire;Bloc optique;03865
+CIC BDRIJ GGD59;Scanner;19364
+BTA d'Annoeullin;Scanner;00117
+PMO de Cambrai;Scanner;07782
+BTA  de Fourmies;Bloc optique;00189
+BTA  de Caudry;Bloc optique;00200
+BTA  d'Orchies;Bloc optique;00214
+BTA  de La-Bassée;Bloc optique;00118
+BTA du Cateau-Cambrésis;Bloc optique;00199
+BP de Ghyvelde;Bloc optique;19126
+BTA d'Estaires;Bloc optique;00146
+BTA de Bouchain;Bloc optique;00174
+CIC BDRIJ GGD60;Scanner;19449
+BP de Grandvilliers;Scanner;00474
+BTA de Nanteuil-le-Haudouin;Scanner;00516
+BTA de Clermont;Bloc optique;00481
+BP de Noyon;Bloc optique;00500
+BP de Méru;Bloc optique;00476
+BTA  de Chantilly;Bloc optique;00512
+BP de Auneuil;Bloc optique;00468
+BTA de Chambly;Bloc optique;00511
+BP de Choisy-au-Bac;Bloc optique;00495
+BP de Crépy-en-Valois;Bloc optique;00514
+BP de Pont-Sainte-Maxence;Bloc optique;00517
+CIC BDRIJ GGD61;Scanner;19602
+BTA d'Alençon;Scanner;01059
+BP de Gacé;Scanner;01072
+BP de l'Aigle;Bloc optique;01095
+BP d'Argentan;Bloc optique;01067
+BP de Flers;Bloc optique;01085
+BP de La-Ferté-Macé;Bloc optique;01084
+BP de Domfront-en-Poiraie;Bloc optique;01081
+CIC BDRIJ GGD62;Scanner;19398
+BP d'écuires;Scanner;00293
+BP de Marconne;Scanner;70678
+BR Arras;Bloc optique;00238
+BP de Saint-Pol-sur-Ternoise;Bloc optique;00314
+BTA  d'Aire-sur-la-Lys;Bloc optique;00305
+PMO de Béthune;Bloc optique;08775
+CIC BDRIJ GGD63;Scanner;20180
+BP de Veyre-Monton;Scanner;02992
+BP d'Issoire;Scanner;03007
+BP de Thiers;Bloc optique;03038
+CIC BDRIJ GGD64;Scanner;19772
+BP de Lescar;Scanner;01665
+BP d'Ustaritz;Scanner;01689
+BP d’Hasparren;Scanner;01685
+PA de Bayonne;Scanner;08399
+PMO d'Artix;Scanner;08988
+BP de Morlaàs;Scanner;01667
+BP de Mourenx;Scanner;15239
+BTA d'Orthez;Bloc optique;01715
+BTA d'Oloron-Sainte-Marie;Bloc optique;01703
+CIC BDRIJ GGD65;Scanner;19993
+BP de Lannemezan;Scanner;02364
+BP de Vic-en-Bigorre;Scanner;02344
+BTA de Bagnères-de-Bigorre;Bloc optique;02360
+CIC BDRIJ GGD66;Scanner;20724
+BP de Ceret;Scanner;04837
+BTA d'Ille-sur Tet;Scanner;04856
+BTA  de Saint-Laurent-de-la-Salanque;Bloc optique;04832
+BTA  de Canet-en-Roussillon;Bloc optique;04826
+BTA de Rivesaltes;Bloc optique;04830
+BTA d'Elne;Bloc optique;04827
+BTA de Saint-Cyprien;Bloc optique;04831
+BTA d'Argelès-sur-Mer;Bloc optique;04839
+BTA de Bompas;Bloc optique;17445
+CIC BDRIJ GGD67;Scanner;20316
+BTA d'Erstein;Scanner;03457
+BP de Saverne;Bloc optique;03481
+BTA  de Mundolsheim;Bloc optique;10408
+BTA  de Molsheim;Bloc optique;03469
+BTA de Bischwiller;Bloc optique;03463
+BTA de La-Wantzenau;Bloc optique;03490
+BTA de Niederbronn-les-Bains-Reichshoffen;Bloc optique;13954
+BTA d'Obernai;Bloc optique;03459
+CIC BDRIJ GGD68;Scanner;20333
+BTA de Rixheim;Scanner;07790
+BP d'Altkirch;Scanner;03530
+BTA  de Cernay;Bloc optique;03559
+BTA d'Illzach;Bloc optique;03549
+BTA de Guebwiller;Bloc optique;60001
+BTA de Thann;Bloc optique;03557
+CIC BDRIJ GGD69;Scanner;20044
+BTA de Villefranche-sur-Saône;Scanner;02521
+BTA de Mions;Scanner;26775
+BTA  de Neuville-sur-Saône;Bloc optique;02498
+BTA  de Corbas;Bloc optique;02503
+BTA  de Saint-Genis-Laval;Bloc optique;02501
+BTA de Tassin-la-Demi-Lune;Bloc optique;09854
+BTA de Limonest;Bloc optique;02496
+BP de Fontaines-sur-Saône;Bloc optique;09852
+BTA de Saint-Laurent-de-Mure;Bloc optique;02502
+BTA de Brignais;Bloc optique;08318
+BTA de Mornant;Bloc optique;02517
+BTA de l'Arbresle;Bloc optique;02510
+BTA de Dardilly;Bloc optique;02494
+BTA de Francheville;Bloc optique;02407
+BTA de Vaugneray;Bloc optique;02515
+BTA de Tarare;Bloc optique;02530
+BTA de Anse;Bloc optique;02522
+CIC BDRIJ GGD70;Scanner;20520
+BP de Champagney;Scanner;04132
+BTA  de Lure;Bloc optique;04131
+BP de Luxeuil-les-Bains;Bloc optique;04136
+BTA de Gray;Bloc optique;04145
+CIC BDRIJ GGD71;Scanner;20452
+PMO de Chalon-sur-Saône;Scanner;28200
+BP d'Autun;Bloc optique;03892
+BP de Louhans;Bloc optique;03931
+CIC BDRIJ GGD72;Scanner;19670
+BP de La-Chapelle-Saint-Aubin;Scanner;13473
+BP d'Oisseau-le-Petit;Scanner;01325
+BP de La-Ferté-Bernard;Bloc optique;01319
+BTA  de Sablé-sur-Sarthe;Bloc optique;01313
+BTA de La-Flèche;Bloc optique;01300
+BP de Saint-Mars-la-Brière;Bloc optique;01294
+BP de Mamers;Bloc optique;01316
+CIC BDRIJ GGD73;Scanner;20146
+BP de Montmélian;Scanner;02879
+BP d'Albertville;Bloc optique;02890
+BTA  de Saint-Jean-de-Maurienne;Bloc optique;02902
+BTA de La-Motte-Servolex;Bloc optique;02880
+CIC BDRIJ GGD74;Scanner;20163
+BMO de Thonon-les-Bains;Scanner;21151
+BTA Chamonix-Mont-Blanc;Scanner;02931
+BP de Megève;Scanner;02933
+BTA de Douvaine;Bloc optique;02958
+BP d'Annecy-Meythet;Bloc optique;25927
+BTA de Saint-Julien-en-Genevois;Bloc optique;02943
+BTA  de Scionzier;Bloc optique;09053
+BP de Sallanches;Bloc optique;02938
+BTA de Bonneville;Bloc optique;02930
+BTA de Reignier-Ésery;Bloc optique;02948
+BTA d’Annecy-Seynod – depuis nov 2023;Bloc optique;09656
+CIC BDRIJ GGD76;Scanner;19466
+BTA de Saint-Romain-de-Colbosc;Scanner;00576
+BTA de Neufchâtel-en-Bray;Scanner;00580
+BTA  du Tréport;Bloc optique;15155
+BTA  de Pavilly;Bloc optique;00600
+BP de Duclair;Bloc optique;00557
+BTA d'Yvetot;Bloc optique;00591
+CIC BDRIJ GGD77;Scanner;20928
+BTA de Nangis;Scanner;05299
+BTA de La-Ferté-sous-Jouarre;Bloc optique;05264
+BTA de Dammartin-en-Goële;Bloc optique;05287
+BTA de Coubert;Bloc optique;05251
+BTA de Mortcerf;Bloc optique;05265
+BTA d'Esbly;Bloc optique;05288
+CIC BDRIJ GGD78;Scanner;20877
+GAR SRGAIR Vélizy-Villacoublay;Scanner;65030
+PA de St Arnoult en Yvelines;Scanner;07438
+BTA de Bonnières sur Seine ;Bloc optique;05118
+BTA de Jouars-Pontchartrain;Bloc optique;05132
+CIC BDRIJ GGD79;Scanner;19840
+BP de Sauzé-Vaussais;Scanner;01916
+BP de Thouars;Scanner;01907
+BTA  de Saint-Maixent-l'École;Bloc optique;01895
+BTA de Bressuire;Bloc optique;01899
+BP de Melle;Bloc optique;01910
+BP de Cerizay;Bloc optique;01903
+BP de Parthenay;Bloc optique;01919
+CIC BDRIJ GGD80;Scanner;19415
+BP de Corbie;Scanner;00348
+BP de Villers-Bocage;Scanner;00355
+BP de Ham;Scanner;00393
+BTA de Roye;Scanner;00384
+BP d'Abbeville;Bloc optique;00360
+BP de Péronne;Bloc optique;00388
+BP de Friville-Escarbotin;Bloc optique;00364
+BTA de Saint-Valery-sur-Somme;Bloc optique;00369
+BP d'Albert;Bloc optique;00389
+CIC BDRIJ GGD81;Scanner;20010
+BTA de Lavaur;Scanner;02397
+BTA de Graulhet;Bloc optique;02394
+BTA de Gaillac;Bloc optique;02406
+CIC BDRIJ GGD82;Scanner;20027
+PMO de Montauban;Scanner;09392
+BP de Grisolles;Scanner;02455
+BP de Moissac;Bloc optique;02458
+BP de Montech;Bloc optique;02460
+BP de Caussade;Bloc optique;02438
+BP de Valence;Bloc optique;02462
+CIC BDRIJ GGD83;Scanner;20622
+BGMAR de Toulon;Scanner;60551
+PMO du Cannet-des-Maures;Scanner;31725
+BTA de Grimaud;Scanner;04544
+BP de Saint-Maximin-la-Sainte-Baume;Bloc optique;04537
+BP des Arcs;Bloc optique;04519
+BTA  de La-Farlède;Bloc optique;17760
+BTA de Fayence;Bloc optique;04524
+BP du Luc;Bloc optique;04526
+BTA de Saint-Tropez;Bloc optique;04548
+BTA de Sainte-Maxime;Bloc optique;04546
+BTA de Bormes-les-Mimosas;Bloc optique;18881
+BTA de Brignoles;Bloc optique;04530
+CIC BDRIJ GGD84;Scanner;20639
+BP d’Orange;Scanner;04604
+BTA de Beaumes-de-Venise;Scanner;04605
+BTA  de Sorgues;Bloc optique;04582
+BTA  de Bollène;Bloc optique;04606
+BP de Pertuis;Bloc optique;04591
+BTA de l'Isle-sur-la-Sorgue;Bloc optique;04580
+BTA de Saint-Saturnin-lès-Avignon;Bloc optique;04577
+BTA de Le-Pontet;Bloc optique;04581
+BTA d'Apt;Bloc optique;04585
+BP de Pernes les Fontaines;Bloc optique;04600
+CIC BDRIJ GGD85;Scanner;19687
+BTA de l'Île-d'Yeu;Scanner;01367
+BP de Sainte-Hermine;Scanner;01358
+BP des Herbiers;Bloc optique;01341
+BP de Montaigu-Vendée;Bloc optique;01343
+BP de Challans;Bloc optique;01366
+BTA  de Saint-Gilles-Croix-de-Vie;Bloc optique;01372
+BTA de Fontenay-le-Comte;Bloc optique;01350
+BP de La-Roche-sur-Yon;Bloc optique;01338
+BTA du Poiré-sur-Vie;Bloc optique;01345
+BP d'Essarts-en-Bocage;Bloc optique;01340
+BTA de Mortagne-sur-Sèvre;Bloc optique;01344
+BP de Luçon;Bloc optique;01354
+BP de Pouzauges;Bloc optique;01357
+BTA des Achards;Bloc optique;01368
+BP de Talmont Saint Hilaire;Bloc optique;01374
+BP de Saint-Jean-de-Monts;Bloc optique;01373
+CIC BDRIJ GGD86;Scanner;19789
+BP de Chauvigny;Scanner;01765
+BP de Vivonne;Bloc optique;01743
+BTA  de Jaunay-Marigny;Bloc optique;01737
+BTA de Loudun;Bloc optique;01751
+CIC BDRIJ GGD87;Scanner;19857
+BP de Bellac;Scanner;01957
+BP de Saint-Junien;Bloc optique;01970
+CIC BDRIJ GGD88;Scanner;20299
+BP de Vittel;Scanner;03413
+BP de Raon-l'étape;Scanner;03436
+BTA de Neufchâteau;Bloc optique;03407
+CIC BDRIJ GGD89;Scanner;20469
+BP de Tonnerre;Scanner;04000
+BP d'Avallon;Bloc optique;03971
+BP de Sens;Bloc optique;03988
+BTA  de Joigny;Bloc optique;03978
+BTA de Migennes;Bloc optique;03983
+BP de Toucy;Bloc optique;03967
+BP de Pont-sur-Yonne;Bloc optique;03991
+BP de Villeneuve-sur-Yonne;Bloc optique;03997
+BP de St Florentin;Bloc optique;03964
+CIC BDRIJ GGD90;Scanner;20537
+PMO de Belfort;Scanner;08681
+CIC BDRIJ GGD91;Scanner;20894
+BTA de Palaiseau;Scanner;05181
+BP de Bondoufle;Bloc optique;18995
+BP de Saint-Pierre-du-Perray;Bloc optique;09212
+BTA  de Mennecy;Bloc optique;05164
+BTA de Dourdan;Bloc optique;05173
+CIC BIRIJ RGIF;Scanner;28380
+CICN aéronautique DIA SRTA Paris-Charles-de-Gaulle;Scanner;58279
+CIC BDRIJ GGD95;Scanner;20911
+BP d'écouen;Scanner;05229
+BTA  de l'Isle-Adam;Scanner;58578
+BTA de Méry-sur-Oise;Bloc optique;13555
+BTA  de Persan;Bloc optique;58577
+BTA Fosses;Bloc optique;07826
+BTA de Domont;Bloc optique;05227
+BTA de Louvres;Bloc optique;05234
+Pôle Judiciaire GGD95;Bloc optique;17144
+CIC BDRIJ COMGENDGP;Scanner;30247
+BTA de Pointe-Noire;Scanner;06783
+BTA de Bouillante;Scanner;06782
+BTA  de Baie-Mahault;Bloc optique;07966
+BTA de Capesterre-Belle-Eau;Bloc optique;06787
+BTA de Saint-Claude;Bloc optique;06780
+BTA du Moule;Bloc optique;06804
+BTA de Morne-à-l'Eau;Bloc optique;06810
+BTA de Port-Louis;Bloc optique;06807
+BTA de Sainte-Anne;Bloc optique;06809
+BTA de Saint-François;Bloc optique;06808
+BTA de Lamentin;Bloc optique;06799
+BTA de Petit-Bourg;Bloc optique;06800
+BTA de Sainte-Rose;Bloc optique;06801
+BP de Gourbeyre;Bloc optique;06785
+CIC BDRIJ COMGENDMQ;Scanner;30207
+BP de Ducos;Scanner;06750
+BP de Rivière-Salée;Bloc optique;06755
+BTA de Saint-Joseph;Bloc optique;06740
+BP de Schoelcher;Bloc optique;06739
+BP de Saint-Pierre;Bloc optique;06743
+BP du Marin;Bloc optique;06754
+BP du François;Bloc optique;06749
+BTA de La-Trinité;Bloc optique;06761
+BTA de Sainte-Marie;Bloc optique;06764
+BP du Lorrain;Bloc optique;06765
+BP du Robert;Bloc optique;06762
+CIC BDRIJ COMGENDGF;Scanner;30234
+BTA  de Kourou;Bloc optique;06823
+BTA  de Matoury;Bloc optique;12963
+BTA  de Saint-Laurent-du-Maroni;Bloc optique;06832
+BTA de Remire-Montjoly;Bloc optique;09941
+BTA de Macouria;Bloc optique;06822
+CIC BDRIJ COMGENDRE;Scanner;30276
+BTA de Cilaos;Scanner;06880
+BP de Saint-Benoît;Bloc optique;06858
+BP du Tampon;Bloc optique;12827
+BTA  de Saint-Louis;Bloc optique;27775
+BTA de Sainte-Marie;Bloc optique;06853
+BMO de La-Rivière-Saint-Louis;Bloc optique;06876
+BTA de Bras-Panon;Bloc optique;06860
+BTA de Sainte-Suzanne;Bloc optique;06854
+BP de Plateau-Caillou;Bloc optique;13572
+BP de Saint-Paul;Bloc optique;06866
+BP de Saint-Leu;Bloc optique;10070
+BTA de La-Possession;Bloc optique;06852
+BTA de Saint-Gilles;Bloc optique;06868
+BTA de La-Plaine-des-Cafres;Bloc optique;06882
+BP de l'Étang-Salé;Bloc optique;17849
+BP de Saint-Joseph;Bloc optique;06883
+BTA de Saint-Pierre;Scanner;07026
+CIC BDRIJ COMGENDYT;Scanner;30301
+BTA de Dembeni;Scanner;06893
+BTA  de Pamandzi;Bloc optique;06894
+BTA de M'Zouazia;Bloc optique;08664
+BTA de Koungou;Bloc optique;75877
+BTA de Mtsamboro;Bloc optique;08663
+BTA de Sada;Bloc optique;07894
+BTA de Dembeni;Bloc optique;06893
+BTA de Saint-Barthélemy;Bloc optique;06790
+CIC saint-martin BDRIJ COMGEND SAINT MARTIN;Scanner;67254
+BTA  de Saint-Martin-Marigot;Bloc optique;06791
+BTA de Saint-Martin-Esperance;Bloc optique;10426
+CIC BRIJ COMGENDPF;Scanner;29401
+BTA de Moorea-Maiao ;Scanner;06971
+BTA de Huahine;Scanner;06973
+BTA  de Faaa;Bloc optique;09150
+BTA  de Arue;Bloc optique;07466
+BTA de Papara;Bloc optique;13999
+BTA de Taravao;Bloc optique;06970
+BTA de Paea;Bloc optique;06968
+BTA de Bora-Bora;Bloc optique;06974
+BTA de Punaauia;Bloc optique;10673
+CIC BRIJ COMGENDNC;Scanner;30222
+BP de Koumac;Scanner;06932
+BTA de Poindimié;Scanner;06940
+BTA  de Dumbéa;Bloc optique;10409
+BTA  de Païta;Bloc optique;06920
+BTA Saint Michel;Bloc optique;06923
+BTA de Bourail;Bloc optique;06930
+BTA de Koné;Bloc optique;06929
+BTA de Plum;Bloc optique;06922
+BTA de La Foa;Bloc optique;06914
