@@ -49,20 +49,22 @@ class DataProcessor:
         """
         return self.data if self.has_data() else pd.DataFrame()
     
-    def process_with_directory(self, directory_column: str, 
-                               type_column: Optional[str] = None, 
-                               columns_to_delete: Optional[List[str]] = None):
+    def process_with_directory(self, directory_column: str,
+                               type_column: Optional[str] = None,
+                               columns_to_delete: Optional[List[str]] = None,
+                               service_rattachement_column: Optional[str] = None):
         """Traite les données en utilisant l'annuaire, avec fusion conditionnelle basée sur le type.
 
         Args:
             directory_column (str): Nom de la colonne contenant la clé pour la fusion.
             type_column (str, optional): Nom de la colonne contenant le type de signalisation (ex: 'SM').
             columns_to_delete (list[str], optional): Colonnes à supprimer des données AVANT fusion.
+            service_rattachement_column (str, optional): Colonne contenant un GN de rattachement à utiliser comme clé si renseignée.
         """
         if not self.has_data() or directory_column not in self.data.columns:
             print("Erreur: Données manquantes ou colonne clé invalide.")
             return False
-        
+
         # Vérifier si la colonne type existe si elle est fournie
         if type_column and type_column not in self.data.columns:
             print(f"Erreur: La colonne type '{type_column}' n'existe pas dans les données importées.")
@@ -71,11 +73,27 @@ class DataProcessor:
         # Faire une copie des données originales pour le traitement
         data_to_process = self.data.copy()
 
+        # --- Filtrer les lignes dont la valeur de la colonne clé commence par 'PN' (avant tout traitement) ---
+        try:
+            # Forcer le type str pour l'analyse, retirer les espaces et comparer en majuscules
+            data_to_process[directory_column] = data_to_process[directory_column].astype(str)
+            before_rows = len(data_to_process)
+            keep_mask = ~data_to_process[directory_column].str.upper().str.strip().str.startswith('PN')
+            if keep_mask.sum() != before_rows:
+                removed = int(before_rows - keep_mask.sum())
+                print(f"Filtrage: suppression de {removed} ligne(s) avec '{directory_column}' commençant par 'PN'.")
+            data_to_process = data_to_process[keep_mask].copy()
+        except Exception as e:
+            print(f"Avertissement: impossible d'appliquer le filtre 'PN' sur la colonne '{directory_column}': {e}")
+
         # --- Suppression des colonnes (AVANT formatage et fusion) ---
         if columns_to_delete:
             cols_safe_to_delete = [
-                col for col in columns_to_delete 
-                if col in data_to_process.columns and col != directory_column and col != type_column
+                col for col in columns_to_delete
+                if col in data_to_process.columns
+                and col != directory_column
+                and col != type_column
+                and (service_rattachement_column is None or col != service_rattachement_column)
             ]
             if cols_safe_to_delete:
                 print(f"Suppression des colonnes : {cols_safe_to_delete}")
@@ -86,18 +104,37 @@ class DataProcessor:
         if directory_data is None or directory_data.empty or 'key' not in directory_data.columns:
             print("Erreur: Annuaire vide ou invalide (colonne 'key' manquante). Traitement annulé.")
             # Ne pas continuer le traitement si l'annuaire est inutilisable
-            self.processed_data = None # Assurer que les données traitées sont vides
-            self.stats = {'global_error': "Annuaire vide ou invalide", 'sm_error': "Annuaire vide ou invalide"} # Optionnel: définir erreurs
-            return False # Indiquer l'échec du traitement
+            self.processed_data = None
+            self.stats = {'global_error': "Annuaire vide ou invalide", 'sm_error': "Annuaire vide ou invalide"}
+            return False
 
-        # --- Formatage de la colonne clé dans les données à traiter ---
+        # --- Formatage des colonnes clés dans les données à traiter ---
         print(f"Formatage de la colonne clé: {directory_column}")
         try:
-             # Assurer que la colonne clé est de type string avant le formatage
             data_to_process[directory_column] = data_to_process[directory_column].astype(str)
             data_to_process[directory_column] = data_to_process[directory_column].apply(
                 self.directory_manager._format_gn_value
             )
+
+            if service_rattachement_column and service_rattachement_column in data_to_process.columns:
+                print(f"Formatage de la colonne service_rattachement: {service_rattachement_column}")
+                data_to_process[service_rattachement_column] = data_to_process[service_rattachement_column].astype(str)
+                data_to_process[service_rattachement_column] = data_to_process[service_rattachement_column].apply(
+                    self.directory_manager._format_gn_value
+                )
+
+            # Construire la clé de fusion effective (par ligne)
+            temp_left_key = '__fusion_key__'
+            data_to_process[temp_left_key] = data_to_process[directory_column]
+            if service_rattachement_column and service_rattachement_column in data_to_process.columns:
+                sr_series = data_to_process[service_rattachement_column].fillna('')
+                # Utiliser le service de rattachement s'il est non vide et différent de la clé
+                mask_use_sr = (
+                    (sr_series.astype(str).str.strip() != '') &
+                    (sr_series != 'GN00000000') &
+                    (sr_series != data_to_process[directory_column])
+                )
+                data_to_process.loc[mask_use_sr, temp_left_key] = sr_series.loc[mask_use_sr]
         except Exception as e:
             print(f"Erreur lors du formatage de la colonne clé '{directory_column}': {e}")
             return False
@@ -105,41 +142,36 @@ class DataProcessor:
         # --- Logique de fusion conditionnelle ---
         if type_column and type_column in data_to_process.columns:
             print(f"Application de la fusion conditionnelle basée sur la colonne '{type_column}'.")
-            
-            # Séparer les données en fonction du type 'SM'
-            # Assurer que la colonne type est de type string pour la comparaison
+
             data_to_process[type_column] = data_to_process[type_column].astype(str)
             df_sm = data_to_process[data_to_process[type_column].str.upper() == 'SM'].copy()
             df_other = data_to_process[data_to_process[type_column].str.upper() != 'SM'].copy()
             print(f"Lignes type SM: {len(df_sm)}, Lignes autres types: {len(df_other)}")
 
-            # Préparer l'annuaire pour la fusion partielle (SM)
+            # Sous-ensemble d'annuaire pour SM
             directory_cols_for_sm = ['key', 'abrege_unite', 'departement']
-            # S'assurer que ces colonnes existent dans l'annuaire
             valid_dir_cols_sm = [col for col in directory_cols_for_sm if col in directory_data.columns]
             directory_sm_subset = directory_data[valid_dir_cols_sm].copy()
             print(f"Colonnes de l'annuaire pour SM : {valid_dir_cols_sm}")
 
-            # Fusion pour les lignes SM (partielle)
-            merged_sm = pd.DataFrame() # Initialiser au cas où df_sm est vide
+            merged_sm = pd.DataFrame()
             if not df_sm.empty:
                 merged_sm = pd.merge(
                     df_sm,
                     directory_sm_subset,
-                    left_on=directory_column,
+                    left_on=temp_left_key,
                     right_on='key',
                     how='left',
                     suffixes=('', '_annuaire')
                 )
                 print("Fusion partielle pour SM terminée.")
 
-            # Fusion pour les autres lignes (complète)
-            merged_other = pd.DataFrame() # Initialiser au cas où df_other est vide
+            merged_other = pd.DataFrame()
             if not df_other.empty:
                 merged_other = pd.merge(
                     df_other,
-                    directory_data, # Utiliser l'annuaire complet
-                    left_on=directory_column,
+                    directory_data,
+                    left_on=temp_left_key,
                     right_on='key',
                     how='left',
                     suffixes=('', '_annuaire')
@@ -149,14 +181,13 @@ class DataProcessor:
             # Combiner les résultats
             self.processed_data = pd.concat([merged_sm, merged_other], ignore_index=True)
             print("Concaténation des résultats SM et autres terminée.")
-
         else:
-            # --- Fusion simple (si pas de colonne type ou invalide) ---
+            # Fusion simple
             print("Application de la fusion simple (pas de condition sur le type).")
             self.processed_data = pd.merge(
                 data_to_process,
                 directory_data,
-                left_on=directory_column,
+                left_on=temp_left_key,
                 right_on='key',
                 how='left',
                 suffixes=('', '_annuaire')
@@ -164,27 +195,24 @@ class DataProcessor:
             print("Fusion simple terminée.")
 
         # --- Nettoyage final des colonnes ---
-        # Supprimer la colonne 'key' de l'annuaire si redondante
         if 'key' in self.processed_data.columns and directory_column != 'key':
             print("Suppression de la colonne 'key' redondante.")
             self.processed_data.drop(columns=['key'], inplace=True, errors='ignore')
-        
-        # Supprimer les colonnes suffixées '_annuaire' si la colonne originale existe
-        # (Peut arriver si une colonne existe dans les deux DFs et n'est pas la clé)
+        if '__fusion_key__' in self.processed_data.columns:
+            self.processed_data.drop(columns=['__fusion_key__'], inplace=True, errors='ignore')
+
         cols_to_drop = [col for col in self.processed_data.columns if col.endswith('_annuaire')]
         if cols_to_drop:
             print(f"Suppression des colonnes suffixées _annuaire: {cols_to_drop}")
             self.processed_data.drop(columns=cols_to_drop, inplace=True, errors='ignore')
-            
+
         print("Traitement terminé avec succès.")
-        # Stocker les paramètres utilisés pour le traitement
         self.processing_params = {
             'directory_column': directory_column,
             'type_column': type_column,
-            'columns_to_delete': columns_to_delete
+            'columns_to_delete': columns_to_delete,
+            'service_rattachement_column': service_rattachement_column
         }
-        # Générer les statistiques après le traitement
-        # Appeler les deux fonctions de génération
         self._generate_global_stats()
         self._generate_sm_stats()
         return True

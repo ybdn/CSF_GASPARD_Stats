@@ -23,40 +23,40 @@ class ImportView(QWidget):
         main_layout = QVBoxLayout(self)
         main_layout.setSpacing(10)
         main_layout.setContentsMargins(10, 10, 10, 10)
-        
+
         # En-tête
         header_layout = QHBoxLayout()
         self.status_label = QLabel("Aucune donnée importée")
         header_layout.addWidget(self.status_label)
         header_layout.addStretch()
-        
+
         # Boutons d'action
         self.import_anfsi_button = QPushButton("Importer Extraction ANFSI")
         self.import_anfsi_button.clicked.connect(self._import_anfsi_data)
         header_layout.addWidget(self.import_anfsi_button)
-        
+
         self.process_button = QPushButton("Traiter les Données")
         self.process_button.clicked.connect(self._process_data)
         self.process_button.setEnabled(False)
         header_layout.addWidget(self.process_button)
-        
+
         main_layout.addLayout(header_layout)
-        
+
         # Table de visualisation des données
         self.data_table = QTableView()
         self.data_model = QStandardItemModel()
         self.data_table.setModel(self.data_model)
         self.data_table.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         main_layout.addWidget(self.data_table, stretch=3)
-        
+
         # Groupe pour les options de traitement
         options_group = QGroupBox("Options de Traitement et Fusion")
         options_main_layout = QHBoxLayout(options_group)
-        
+
         # Layout vertical pour les sélecteurs Clé/Type et le bouton Traiter
         left_options_layout = QVBoxLayout()
-        
-        # Sélecteurs Clé et Type
+
+        # Sélecteurs Clé, Type et Service de Rattachement
         selector_layout = QHBoxLayout()
         selector_layout.addWidget(QLabel("Colonne Clé (fusion):"))
         self.directory_column = QComboBox()
@@ -67,9 +67,14 @@ class ImportView(QWidget):
         self.type_column = QComboBox()
         self.type_column.setMinimumWidth(150)
         selector_layout.addWidget(self.type_column)
+        selector_layout.addSpacing(15)
+        selector_layout.addWidget(QLabel("Service Rattachement (optionnel):"))
+        self.service_rattachement_column = QComboBox()
+        self.service_rattachement_column.setMinimumWidth(180)
+        selector_layout.addWidget(self.service_rattachement_column)
         selector_layout.addStretch()
         left_options_layout.addLayout(selector_layout)
-        
+
         # Bouton Traiter
         self.process_button = QPushButton("Traiter et Exporter")
         self.process_button.clicked.connect(self._process_data)
@@ -79,9 +84,9 @@ class ImportView(QWidget):
         button_hbox.addWidget(self.process_button)
         left_options_layout.addStretch()
         left_options_layout.addLayout(button_hbox)
-        
+
         options_main_layout.addLayout(left_options_layout, stretch=2)
-        
+
         # Layout vertical pour la liste des colonnes à supprimer (à droite)
         delete_layout = QVBoxLayout()
         delete_layout.addWidget(QLabel("Colonnes à supprimer (avant fusion):"))
@@ -89,18 +94,47 @@ class ImportView(QWidget):
         self.columns_to_delete_list.setSelectionMode(QAbstractItemView.NoSelection)
         delete_layout.addWidget(self.columns_to_delete_list)
         options_main_layout.addLayout(delete_layout, stretch=1)
-        
+
         main_layout.addWidget(options_group, stretch=1)
-    
-    def update_view(self):
-        """Met à jour la vue avec les données actuelles."""
-        # Effacer les éléments spécifiques avant de vérifier les données
-        self.data_model.clear()
-        self.directory_column.clear()
-        self.type_column.clear()
-        self.columns_to_delete_list.clear()
-        self.process_button.setEnabled(False)
         
+    def update_view(self):
+        """Met à jour la vue après import des données."""
+        # Sécuriser les accès aux widgets
+        if not hasattr(self, 'data_model'):
+            return
+
+        # Vider la table
+        self.data_model.clear()
+
+        if self.data_processor.has_data():
+            data = self.data_processor.get_data()
+            # Statut
+            if hasattr(self, 'status_label'):
+                self.status_label.setText(f"Données importées: {len(data)} entrées")
+            # Table
+            self._populate_table(data)
+            # Combos
+            self._update_columns_combo(data)
+            # Liste des colonnes à supprimer
+            self._update_delete_list(data)
+            # Bouton traiter
+            if hasattr(self, 'process_button'):
+                self.process_button.setEnabled(True)
+        else:
+            if hasattr(self, 'status_label'):
+                self.status_label.setText("Aucune donnée importée")
+            # Reset des combos et listes
+            if hasattr(self, 'directory_column'):
+                self.directory_column.clear()
+            if hasattr(self, 'type_column'):
+                self.type_column.clear()
+            if hasattr(self, 'service_rattachement_column'):
+                self.service_rattachement_column.clear()
+            if hasattr(self, 'columns_to_delete_list'):
+                self.columns_to_delete_list.clear()
+            if hasattr(self, 'process_button'):
+                self.process_button.setEnabled(False)
+
         if self.data_processor.has_data():
             data = self.data_processor.get_data()
             
@@ -143,10 +177,13 @@ class ImportView(QWidget):
         """Met à jour les combo boxes des colonnes disponibles."""
         self.directory_column.clear()
         self.type_column.clear()
+        self.service_rattachement_column.clear()
         if not data.empty:
             column_names = data.columns.tolist()
             self.directory_column.addItems(column_names)
             self.type_column.addItems(column_names)
+            self.service_rattachement_column.addItem("(Aucun)")
+            self.service_rattachement_column.addItems(column_names)
     
     def _import_anfsi_data(self):
         """Ouvre une boîte de dialogue pour importer une extraction ANFSI (CSV)."""
@@ -177,6 +214,10 @@ class ImportView(QWidget):
             
             directory_col = self.directory_column.currentText()
             type_col = self.type_column.currentText()
+            sr_col = None
+            if hasattr(self, 'service_rattachement_column') and self.service_rattachement_column.currentText():
+                sr_choice = self.service_rattachement_column.currentText()
+                sr_col = None if sr_choice == "(Aucun)" else sr_choice
 
             # --- Vérification simple pour éviter de sélectionner la même colonne pour les deux ---
             # Bien qu'il puisse y avoir des cas d'usage, c'est souvent une erreur.
@@ -195,13 +236,13 @@ class ImportView(QWidget):
                     if item.checkState() == Qt.Checked:
                         # Vérifier que la colonne à supprimer n'est pas la clé ou le type
                         col_text = item.text()
-                        if col_text != directory_col and col_text != type_col:
+                        if col_text != directory_col and col_text != type_col and (sr_col is None or col_text != sr_col):
                             columns_to_delete.append(col_text)
                         else:
                             # Décocher la case et informer l'utilisateur si la colonne clé/type est cochée
                             item.setCheckState(Qt.Unchecked)
                             QMessageBox.warning(self, "Sélection Ignorée",
-                                                f"La colonne '{col_text}' ne peut pas être supprimée car elle est utilisée comme Clé ou Type.")
+                                                f"La colonne '{col_text}' ne peut pas être supprimée car elle est utilisée comme Clé, Type ou Service de Rattachement.")
             # ------------------------------------------
 
             try:
@@ -210,7 +251,8 @@ class ImportView(QWidget):
                 success = self.data_processor.process_with_directory(
                     directory_col,
                     type_column=type_col,
-                    columns_to_delete=columns_to_delete # Passer la liste
+                    columns_to_delete=columns_to_delete, # Passer la liste
+                    service_rattachement_column=sr_col
                 )
 
                 if success and self.data_processor.processed_data is not None:
