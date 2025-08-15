@@ -192,56 +192,54 @@ class DataProcessor:
     def _generate_global_stats(self):
         """Génère des statistiques agrégées sur TOUTES les données traitées."""
         if self.processed_data is None or self.processed_data.empty:
-            if isinstance(self.stats, dict):
-                 self.stats['global_summary_table'] = pd.DataFrame() # Table vide
-            else:
-                 self.stats = {'global_summary_table': pd.DataFrame()} # Initialiser stats si besoin
+            if not isinstance(self.stats, dict):
+                self.stats = {}
+            self.stats['global_summary_table'] = pd.DataFrame()  # Table vide
             print("Aucune donnée traitée disponible pour générer les statistiques globales.")
             return
 
-        # --- Configuration ---
+        # Colonnes attendues
         dept_col = 'departement'
         unit_col = 'abrege_unite'
         material_col = 'type_materiel'
         terminal_col = 'code_unite_terminal_de_saisie'
-        idpp_col = 'idpp'
-        grouping_cols = [dept_col, unit_col, material_col, terminal_col]
-        required_cols = grouping_cols + [idpp_col]
+        # Résoudre la colonne idpp de manière insensible à la casse
+        idpp_col = next((c for c in self.processed_data.columns if c.lower() == 'idpp'), None)
 
-        # --- Vérification des colonnes ---
+        grouping_cols = [dept_col, unit_col, material_col, terminal_col]
+        required_cols = grouping_cols + ([idpp_col] if idpp_col else [])
+
         missing_cols = [col for col in required_cols if col not in self.processed_data.columns]
+        if not idpp_col:
+            missing_cols.append('idpp')
         if missing_cols:
             err_msg = f"Colonnes manquantes pour stats globales: {', '.join(missing_cols)}"
             print(f"Attention: {err_msg}")
-            if isinstance(self.stats, dict):
-                self.stats['global_error'] = err_msg
-                self.stats['global_summary_table'] = pd.DataFrame()
-            else:
-                self.stats = {'global_error': err_msg, 'global_summary_table': pd.DataFrame()}
+            if not isinstance(self.stats, dict):
+                self.stats = {}
+            self.stats['global_error'] = err_msg
+            self.stats['global_summary_table'] = pd.DataFrame()
             return
 
-        # --- Calcul des statistiques globales ---
+        # Calcul des statistiques globales
         print(f"Génération des statistiques globales par groupe: {grouping_cols}")
         stats_df = self.processed_data.copy()
 
-        # Identification GASPARD (présence d'idpp)
+        # Identification GASPARD (présence d'idpp non vide)
         is_gaspard_col = 'is_gaspard'
         stats_df[is_gaspard_col] = stats_df[idpp_col].notna() & (stats_df[idpp_col].astype(str).str.strip() != '')
         stats_df[is_gaspard_col] = stats_df[is_gaspard_col].astype(int)
 
-        # Groupement et agrégation
         aggregated_stats = stats_df.groupby(grouping_cols).agg(
             nombre_signalisation=(grouping_cols[0], 'size'),
             nombre_signalisation_gaspard=(is_gaspard_col, 'sum')
         ).reset_index()
 
-        # Calcul du pourcentage
         aggregated_stats['pourcentage_signalisation_gaspard'] = (
             (aggregated_stats['nombre_signalisation_gaspard'] / aggregated_stats['nombre_signalisation']) * 100
         ).round(2)
         aggregated_stats['pourcentage_signalisation_gaspard'].fillna(0, inplace=True)
 
-        # Renommage
         aggregated_stats.rename(columns={
             dept_col: 'Département',
             unit_col: 'Libellé Unité',
@@ -251,90 +249,86 @@ class DataProcessor:
             'nombre_signalisation_gaspard': 'Nombre de signalisation GASPARD',
             'pourcentage_signalisation_gaspard': 'Pourcentage signalisation GASPARD'
         }, inplace=True)
-        
-        # --- Formatage du département (ajout du zéro) ---
+
+        # Formatage du département sur 2 chiffres
         dept_col_renamed = 'Département'
         if dept_col_renamed in aggregated_stats.columns:
             aggregated_stats[dept_col_renamed] = aggregated_stats[dept_col_renamed].astype(str).str.zfill(2)
 
-        # Tri simple (Département puis Unité)
         aggregated_stats.sort_values(by=['Département', 'Libellé Unité'], ascending=[True, True], inplace=True)
 
-        # Stockage
-        if not isinstance(self.stats, dict): self.stats = {}
+        if not isinstance(self.stats, dict):
+            self.stats = {}
         self.stats['global_summary_table'] = aggregated_stats
         print(f"Statistiques globales générées avec {len(aggregated_stats)} lignes.")
 
-
     def _generate_sm_stats(self):
         """Génère des statistiques agrégées sur les données de type 'SM' uniquement."""
-        # Initialisation du slot de stats SM dans le dictionnaire principal
-        if not isinstance(self.stats, dict): self.stats = {}
-        self.stats['sm_summary_table'] = pd.DataFrame() # Préparer table vide
+        if not isinstance(self.stats, dict):
+            self.stats = {}
+        self.stats['sm_summary_table'] = pd.DataFrame()  # Préparer table vide
 
         if self.processed_data is None or self.processed_data.empty:
             print("Aucune donnée traitée disponible pour générer les statistiques SM.")
             return
 
-        # --- Configuration pour SM ---
+        # Colonnes attendues
         dept_col = 'departement'
         unit_col = 'abrege_unite'
         material_col = 'type_materiel'
         terminal_col = 'code_unite_terminal_de_saisie'
-        idpp_col = 'idpp'
-        type_col = self.processing_params.get('type_column') # Nécessaire pour le filtre SM
-        grouping_cols = [dept_col, unit_col, material_col, terminal_col]
-        required_cols = grouping_cols + [idpp_col, type_col]
+        # Résoudre la colonne idpp de manière insensible à la casse
+        idpp_col = next((c for c in self.processed_data.columns if c.lower() == 'idpp'), None)
+        type_col = self.processing_params.get('type_column')  # Requis pour filtrer SM
 
-        # --- Vérification des colonnes pour SM ---
+        grouping_cols = [dept_col, unit_col, material_col, terminal_col]
+        required_cols = grouping_cols + ([idpp_col] if idpp_col else []) + [type_col]
+
         if not type_col:
             err_msg = "Colonne 'type' non spécifiée pour le traitement."
             print(f"Erreur: {err_msg} Impossible de générer les statistiques SM.")
             self.stats['sm_error'] = err_msg
             return
-            
+
         missing_cols = [col for col in required_cols if col not in self.processed_data.columns]
+        if not idpp_col:
+            missing_cols.append('idpp')
         if missing_cols:
             err_msg = f"Colonnes manquantes pour stats SM: {', '.join(missing_cols)}"
             print(f"Attention: {err_msg}")
             self.stats['sm_error'] = err_msg
             return
 
-        # --- Filtrage initial sur le type 'SM' ---
+        # Filtrer SM
         print(f"Filtrage des données pour ne garder que le type 'SM' basé sur la colonne '{type_col}'.")
         sm_data = self.processed_data[
             self.processed_data[type_col].astype(str).str.upper() == 'SM'
         ].copy()
-        
+
         if sm_data.empty:
             print("Aucune donnée de type 'SM' trouvée après filtrage. Stats SM resteront vides.")
-            return # Laisse la table vide initialisée plus haut
+            return
         print(f"{len(sm_data)} lignes de type 'SM' trouvées.")
-        # ----------------------------------------
 
-        # --- Calcul des statistiques (maintenant sur sm_data) ---
+        # Calcul des statistiques sur SM
         print(f"Génération des statistiques SM par groupe: {grouping_cols}")
-        stats_df = sm_data # Utiliser les données filtrées
+        stats_df = sm_data
 
-        # Identification GASPARD (présence d'idpp sur données SM)
         is_gaspard_col = 'is_gaspard'
         stats_df[is_gaspard_col] = stats_df[idpp_col].notna() & (stats_df[idpp_col].astype(str).str.strip() != '')
         stats_df[is_gaspard_col] = stats_df[is_gaspard_col].astype(int)
         print(f"Identification des signalisations GASPARD basée sur la présence d'une valeur dans '{idpp_col}' (sur données SM).")
 
-        # Groupement et agrégation (sur données SM)
         aggregated_stats = stats_df.groupby(grouping_cols).agg(
             nombre_signalisation=(grouping_cols[0], 'size'),
             nombre_signalisation_gaspard=(is_gaspard_col, 'sum')
         ).reset_index()
 
-        # Calcul du pourcentage
         aggregated_stats['pourcentage_signalisation_gaspard'] = (
             (aggregated_stats['nombre_signalisation_gaspard'] / aggregated_stats['nombre_signalisation']) * 100
         ).round(2)
         aggregated_stats['pourcentage_signalisation_gaspard'].fillna(0, inplace=True)
 
-        # Renommage
         aggregated_stats.rename(columns={
             dept_col: 'Département',
             unit_col: 'Libellé Unité',
@@ -345,7 +339,7 @@ class DataProcessor:
             'pourcentage_signalisation_gaspard': 'Pourcentage signalisation GASPARD'
         }, inplace=True)
 
-        # --- Calcul des lignes de synthèse GGD par département (sur données SM) ---
+        # Lignes de synthèse GGD par département
         dept_summary_list = []
         dept_grouped = stats_df.groupby(dept_col).agg(
             dept_total_signalisations=(dept_col, 'size'),
@@ -366,20 +360,13 @@ class DataProcessor:
             })
         dept_summary_df = pd.DataFrame(dept_summary_list)
 
-        # --- Concaténer stats SM détaillées et synthèses GGD ---
         final_sm_stats_df = pd.concat([aggregated_stats, dept_summary_df], ignore_index=True)
 
-        # --- Tri multi-niveaux pour SM (appliqué au DF combiné SM) ---
         final_sm_stats_df['is_cic'] = (~final_sm_stats_df['Libellé Unité'].astype(str).str.startswith('CIC', na=False)).astype(int)
-        final_sm_stats_df.sort_values(
-            by=['Département', 'is_cic', 'Libellé Unité'],
-            ascending=[True, True, True],
-            inplace=True
-        )
+        final_sm_stats_df.sort_values(by=['Département', 'is_cic', 'Libellé Unité'], ascending=[True, True, True], inplace=True)
         final_sm_stats_df.drop(columns=['is_cic'], inplace=True)
 
-        # Stockage
-        self.stats['sm_summary_table'] = final_sm_stats_df # Stocker le DF final SM
+        self.stats['sm_summary_table'] = final_sm_stats_df
         print(f"Statistiques SM (avec synthèses GGD) générées avec {len(final_sm_stats_df)} lignes.")
 
 
@@ -393,4 +380,4 @@ class DataProcessor:
     
     def get_stats(self):
         """Retourne le dictionnaire complet des statistiques actuelles."""
-        return self.stats if isinstance(self.stats, dict) else {} 
+        return self.stats if isinstance(self.stats, dict) else {}
