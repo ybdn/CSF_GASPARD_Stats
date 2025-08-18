@@ -45,6 +45,16 @@ source venv/bin/activate  # Sur Windows: venv\\Scripts\\activate
 pip3 install -r requirements.txt
 ```
 
+## Désinstallation
+
+```bash
+ls ~/.local/share/applications
+```
+
+```bash
+rm ~/.local/share/applications/csf_gaspard.desktop
+```
+
 ## Utilisation
 
 1. Lancez l'application :
